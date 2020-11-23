@@ -1,0 +1,24 @@
+<div class="col-12" style="text-align: center;">
+    <form class="animated fadeIn" #FormLogin="ngForm" (ngSubmit)="newPost(FormLogin)">
+        <h5>
+            Nueva publicación
+        </h5>
+        <span *ngIf="FormLogin.submitted && FormLogin.controls['postTitle'].errors" class="text-danger animated fadeIn">
+          El tiulo es obligatorio</span>
+        <div class="wrap-input100 m-b-16" style="background-color: white;">
+            <input class="input100" type="text" name="postTitle" placeholder="Titulo de la publicación" [(ngModel)]="postModel.PublicationTitle" required>
+            <span class="focus-input100"></span>
+        </div>
+        <span *ngIf="FormLogin.submitted && FormLogin.controls['postContent'].errors" class="text-danger animated fadeIn">
+          El contenido del post es obligatorio</span>
+        <div class="wrap-input100 m-b-16" style="background-color: white;">
+            <textarea name="postContent" id="postContent" class="input100" rows="10" placeholder="Contenido de la publicación" [(ngModel)]="postModel.PublicationContent" required></textarea>
+            <span class="focus-input100"></span>
+        </div>
+        <div>
+            <button class="btn btn-outline-dark" type="submit">
+              Crear publicación
+            </button>
+        </div>
+    </form>
+</div>

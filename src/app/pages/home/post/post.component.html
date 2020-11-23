@@ -1,0 +1,12 @@
+<div class="col-md-4" style="display: inline-block;">
+    <ul class="thumbnails">
+        <li class="span4">
+            <div class="thumbnail">
+                <img src="../../../../assets/images/demo.png" alt="Naturaleza">
+                <h3>{{ postModel.publicationTitle }}</h3>
+                <p>{{ postModel.publicationContent }}</p>
+                <button (click)="deletePost(postModel.idPost)" class="btn btn-danger">Eliminar</button>
+            </div>
+        </li>
+    </ul>
+</div>

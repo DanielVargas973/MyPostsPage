@@ -1,0 +1,47 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-50 p-b-90">
+            <form class="login100-form validate-form flex-sb flex-w animated fadeIn" (ngSubmit)="onRegister(FormRegister)" #FormRegister="ngForm">
+                <span class="login100-form-title p-b-51">
+                        Crear nueva cuenta
+                    </span>
+                <span *ngIf="FormRegister.submitted && FormRegister.controls['email'].errors" class="text-danger animated fadeIn">
+                    El correo es obligatorio</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="email" name="email" placeholder="Correo electrónico" [(ngModel)]="user.email" required email>
+                    <span class="focus-input100"></span>
+                </div>
+                <span *ngIf="FormRegister.submitted && FormRegister.controls['names'].errors" class="text-danger animated fadeIn">
+                    Los nombres son obligatorios</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="text" name="names" placeholder="Nombres" [(ngModel)]="user.names" required minlength="4">
+                    <span class="focus-input100"></span>
+                </div>
+                <span *ngIf="FormRegister.submitted && FormRegister.controls['surnames'].errors" class="text-danger animated fadeIn">
+                    Los apellidos son obligatorios</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="text" name="surnames" placeholder="Apellidos" [(ngModel)]="user.surnames" required minlength="4">
+                    <span class="focus-input100"></span>
+                </div>
+                <span *ngIf="FormRegister.submitted && FormRegister.controls['password'].errors" class="text-danger animated fadeIn">
+                    La contraseña es obligatoria</span>
+                <div class="wrap-input100 m-b-16" data-validate="Password is required">
+                    <input class="input100" type="password" name="password" placeholder="Contraseña" [(ngModel)]="user.password" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="flex-sb-m w-full p-t-3 p-b-24">
+                    <div>
+                        <a routerLink="/login" class="txt1">
+                                ¿Ya tienes cuenta?
+                            </a>
+                    </div>
+                </div>
+                <div class="container-login100-form-btn m-t-17">
+                    <button class="login100-form-btn" type="submit">
+                            Crear cuenta
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

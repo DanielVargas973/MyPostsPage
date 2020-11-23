@@ -1,0 +1,13 @@
+<div class="navbar">
+    <h1>Mis publicaciones</h1>
+    <button class="btn btn-outline-danger" style="display: inline;" (click)="closeSession()">
+      Cerrar sesión
+    </button>
+</div>
+<hr>
+<div class="container">
+    <app-new></app-new>
+    <hr>
+    <h1>Tus publicaciones son</h1>
+    <app-post *ngFor="let postModel of postModels" [postModel]="postModel"></app-post>
+</div>
